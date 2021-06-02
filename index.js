@@ -1,11 +1,15 @@
 const express = require('express')
 const app = express()
+const ejs = require('ejs');
 const port = process.env.PORT || 8080
+
+app.set("view engine", "ejs");
+app.use(express.static(__dirname + '/public'));
 
 data = []
 
 app.get('/', (req, res) => {
-  res.send(data)
+    res.render("index", data);
 })
 
 app.get('/user/:name', function (req, res) {
