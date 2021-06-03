@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 app.get('/user/:name', function (req, res) {
     data.push(req.params.name);
     res.send(req.params.name)
-  })
+})
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
